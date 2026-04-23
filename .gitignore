@@ -36,17 +36,11 @@ dist/
 *.ckpt
 *.safetensors
 
-# Experiment outputs
-results/
-figures/generated/
 
 # Cached Hugging Face / model artifacts
 cache/
 .huggingface/
 hf_cache/
-
-# Large raw datasets if downloaded locally
-data/raw/
 
 # Temporary files
 tmp/
@@ -55,3 +49,4 @@ temp/
 # Generated reports / presentation exports
 *.pdf
 *.pptx
+CLAUDE.md

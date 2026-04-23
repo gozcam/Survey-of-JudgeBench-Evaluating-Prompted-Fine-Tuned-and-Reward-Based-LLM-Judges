@@ -1,0 +1,6 @@
+category,gemini-2.5-flash-lite_accuracy,gemini-2.5-flash-lite_incorrect_rate,gemini-2.5-flash-lite_inconsistency_rate,gpt-4.1-mini_accuracy,gpt-4.1-mini_incorrect_rate,gpt-4.1-mini_inconsistency_rate,gpt-4o-mini_accuracy,gpt-4o-mini_incorrect_rate,gpt-4o-mini_inconsistency_rate
+mmlu-pro,65.58,12.99,21.43,65.58,18.18,16.23,47.40,27.92,24.68
+livebench-reasoning,67.35,8.16,24.49,72.45,7.14,20.41,43.88,30.61,25.51
+livebench-math,82.14,7.14,10.71,80.36,8.93,10.71,66.07,7.14,26.79
+livecodebench,69.05,4.76,26.19,71.43,2.38,26.19,40.48,35.71,23.81
+Overall,69.14,9.71,21.14,70.57,11.71,17.71,48.57,26.29,25.14
