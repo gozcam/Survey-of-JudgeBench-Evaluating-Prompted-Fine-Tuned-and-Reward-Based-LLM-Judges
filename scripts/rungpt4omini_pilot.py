@@ -19,11 +19,13 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 JUDGEBENCH_DIR = REPO_ROOT / "third_party" / "judgebench"
 RUN_JUDGE_SCRIPT = JUDGEBENCH_DIR / "run_judge.py"
 FULL_DATASET = JUDGEBENCH_DIR / "data" / "dataset=judgebench,response_model=gpt-4o-2024-05-13.jsonl"
-SUBSET_PATH = JUDGEBENCH_DIR / "data" / "dataset=judgebench-pilot10,response_model=gpt-4o-2024-05-13.jsonl"
+SUBSET_PATH = REPO_ROOT / "data" / "dataset=judgebench-pilot10,response_model=gpt-4o-2024-05-13.jsonl"
 SUBSET_SIZE = 10
 SEED = 42
 
 def ensure_subset() -> Path:
+    SUBSET_PATH.parent.mkdir(parents=True, exist_ok=True)
+
     if SUBSET_PATH.exists():
         print(f"Subset already exists at {SUBSET_PATH}, reusing it.")
         return SUBSET_PATH
