@@ -37,10 +37,8 @@ dist/
 *.safetensors
 
 # Experiment outputs
-outputs/
 results/
 figures/generated/
-data/processed/
 
 # Cached Hugging Face / model artifacts
 cache/
