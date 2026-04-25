@@ -1,5 +1,6 @@
 datasets
 openai==1.16.2
+httpx<0.28
 anthropic==0.26.1
 tqdm
 pyyaml
