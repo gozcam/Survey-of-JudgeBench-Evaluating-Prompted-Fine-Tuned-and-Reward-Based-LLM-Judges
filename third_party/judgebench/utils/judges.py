@@ -542,7 +542,7 @@ class SkyworkReward(Judge):
         self.rm = AutoModelForSequenceClassification.from_pretrained(
             model_name,
             torch_dtype=torch.bfloat16,
-            attn_implementation="flash_attention_2",
+            attn_implementation="sdpa",
         ).to(self.device)
         self.rm_tokenizer = AutoTokenizer.from_pretrained(model_name)
 

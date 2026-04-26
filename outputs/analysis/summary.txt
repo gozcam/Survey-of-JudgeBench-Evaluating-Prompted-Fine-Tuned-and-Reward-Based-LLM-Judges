@@ -35,6 +35,28 @@ JudgeBench Output Analysis
   Overall                   48.6%       170     92      88    350
 
 ============================================================
+  meta-llama_Meta-Llama-3.1-8B-Instruct
+============================================================
+  Category                    Acc   Correct  Wrong  Incons  Total
+  ---------------------------------------------------------
+  mmlu-pro                  38.3%        59     36      59    154
+  livebench-reasoning       40.8%        40     27      31     98
+  livebench-math            44.6%        25     10      21     56
+  livecodebench             33.3%        14     17      11     42
+  Overall                   39.4%       138     90     122    350
+
+============================================================
+  Skywork_Skywork-Reward-Llama-3.1-8B
+============================================================
+  Category                    Acc   Correct  Wrong  Incons  Total
+  ---------------------------------------------------------
+  mmlu-pro                  59.1%        91     63       0    154
+  livebench-reasoning       63.3%        62     36       0     98
+  livebench-math            76.8%        43     13       0     56
+  livecodebench             50.0%        21     21       0     42
+  Overall                   62.0%       217    133       0    350
+
+============================================================
   Skywork_Skywork-Critic-Llama-3.1-8B
 ============================================================
   Category                    Acc   Correct  Wrong  Incons  Total
@@ -48,35 +70,35 @@ JudgeBench Output Analysis
 ============================================================
   Cross-model accuracy comparison
 ============================================================
-  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  Skywork_Skywor
-  ----------------------------------------------------------------------------------------
-  mmlu-pro                           65.6%           65.6%           47.4%           52.6%
-  livebench-reasoning                67.3%           72.4%           43.9%           54.1%
-  livebench-math                     82.1%           80.4%           66.1%           75.0%
-  livecodebench                      69.0%           71.4%           40.5%           31.0%
-  Overall                            69.1%           70.6%           48.6%           54.0%
+  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  meta-llama_Met  Skywork_Skywor  Skywork_Skywor
+  ------------------------------------------------------------------------------------------------------------------------
+  mmlu-pro                           65.6%           65.6%           47.4%           38.3%           59.1%           52.6%
+  livebench-reasoning                67.3%           72.4%           43.9%           40.8%           63.3%           54.1%
+  livebench-math                     82.1%           80.4%           66.1%           44.6%           76.8%           75.0%
+  livecodebench                      69.0%           71.4%           40.5%           33.3%           50.0%           31.0%
+  Overall                            69.1%           70.6%           48.6%           39.4%           62.0%           54.0%
 
 ============================================================
   Incorrect rate by category (% of all pairs)
 ============================================================
-  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  Skywork_Skywor
-  ----------------------------------------------------------------------------------------
-  mmlu-pro                           13.0%           18.2%           27.9%           26.0%
-  livebench-reasoning                 8.2%            7.1%           30.6%           32.7%
-  livebench-math                      7.1%            8.9%            7.1%           16.1%
-  livecodebench                       4.8%            2.4%           35.7%           40.5%
-  Overall                             9.7%           11.7%           26.3%           28.0%
+  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  meta-llama_Met  Skywork_Skywor  Skywork_Skywor
+  ------------------------------------------------------------------------------------------------------------------------
+  mmlu-pro                           13.0%           18.2%           27.9%           23.4%           40.9%           26.0%
+  livebench-reasoning                 8.2%            7.1%           30.6%           27.6%           36.7%           32.7%
+  livebench-math                      7.1%            8.9%            7.1%           17.9%           23.2%           16.1%
+  livecodebench                       4.8%            2.4%           35.7%           40.5%           50.0%           40.5%
+  Overall                             9.7%           11.7%           26.3%           25.7%           38.0%           28.0%
 
 ============================================================
   Inconsistency rate by category (% of all pairs)
 ============================================================
-  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  Skywork_Skywor
-  ----------------------------------------------------------------------------------------
-  mmlu-pro                           21.4%           16.2%           24.7%           21.4%
-  livebench-reasoning                24.5%           20.4%           25.5%           13.3%
-  livebench-math                     10.7%           10.7%           26.8%            8.9%
-  livecodebench                      26.2%           26.2%           23.8%           28.6%
-  Overall                            21.1%           17.7%           25.1%           18.0%
+  Category                  gemini-2.5-fla    gpt-4.1-mini     gpt-4o-mini  meta-llama_Met  Skywork_Skywor  Skywork_Skywor
+  ------------------------------------------------------------------------------------------------------------------------
+  mmlu-pro                           21.4%           16.2%           24.7%           38.3%            0.0%           21.4%
+  livebench-reasoning                24.5%           20.4%           25.5%           31.6%            0.0%           13.3%
+  livebench-math                     10.7%           10.7%           26.8%           37.5%            0.0%            8.9%
+  livecodebench                      26.2%           26.2%           23.8%           26.2%            0.0%           28.6%
+  Overall                            21.1%           17.7%           25.1%           34.9%            0.0%           18.0%
 
 ============================================================
   Failure mode breakdown by category
@@ -114,6 +136,28 @@ JudgeBench Output Analysis
   livebench-math                    4      15        19     56      7.1%    26.8%  33.9%
   livecodebench                    15      10        25     42     35.7%    23.8%  59.5%
   Overall                          92      88       180    350     26.3%    25.1%  51.4%
+
+============================================================
+  meta-llama_Meta-Llama-3.1-8B-Instruct — failure modes by category
+============================================================
+  Category                  Incorrect  Incons  Failures  Total   Incorr%  Incons%  Fail%
+  -----------------------------------------------------------------------------------
+  mmlu-pro                         36      59        95    154     23.4%    38.3%  61.7%
+  livebench-reasoning              27      31        58     98     27.6%    31.6%  59.2%
+  livebench-math                   10      21        31     56     17.9%    37.5%  55.4%
+  livecodebench                    17      11        28     42     40.5%    26.2%  66.7%
+  Overall                          90     122       212    350     25.7%    34.9%  60.6%
+
+============================================================
+  Skywork_Skywork-Reward-Llama-3.1-8B — failure modes by category
+============================================================
+  Category                  Incorrect  Incons  Failures  Total   Incorr%  Incons%  Fail%
+  -----------------------------------------------------------------------------------
+  mmlu-pro                         63       0        63    154     40.9%     0.0%  40.9%
+  livebench-reasoning              36       0        36     98     36.7%     0.0%  36.7%
+  livebench-math                   13       0        13     56     23.2%     0.0%  23.2%
+  livecodebench                    21       0        21     42     50.0%     0.0%  50.0%
+  Overall                         133       0       133    350     38.0%     0.0%  38.0%
 
 ============================================================
   Skywork_Skywork-Critic-Llama-3.1-8B — failure modes by category
@@ -280,6 +324,106 @@ JudgeBench Output Analysis
     judge(1):  My answer to the prompt is: AAAAA  Now, let's evaluate the responses from Assistant A and Assistant B.  **Evaluation of Assistant A's Answer:** 1. **Content Analysis**: Assistant A provides a detailed breakdown of each option, discussing the implications of the man's mental state and the police's c
 
 
+[[ meta-llama_Meta-Llama-3.1-8B-Instruct ]]
+
+  --- livebench-math (31 failures, showing 2) ---
+    pair_id : 5c614de5-0a80-5981-bb36-2690b198168c
+    label   : A>B  |  decisions: ['A=B', 'A>B']  |  outcome: incorrect
+    question: Differentiate the following function: $\log (-8 x-4)$. Please put your final answer in a $\\boxed{}$.
+    judge(1):  To differentiate the function $\log (-8 x-4)$, we will use the chain rule.  Let $u = -8x - 4$. Then, the function becomes $\log(u)$.  The derivative of $\log(u)$ with respect to $u$ is $\frac{1}{u}$.  Next, we need to find the derivative of $u$ with respect to $x$:  \[ \frac{du}{dx} = \frac{d}{dx}(
+
+    pair_id : 1d13565a-862e-591d-917e-47686c15db7c
+    label   : B>A  |  decisions: ['A>B', 'B>A']  |  outcome: incorrect
+    question: Complete the square for the following quadratic: $12 x^2+2 x+11$. Please put your final answer in a $\\boxed{}$.
+    judge(1):  To complete the square for the quadratic expression $12x^2 + 2x + 11$, follow these steps:  1. **Factor out the coefficient of $x^2$ from the first two terms:**    \[    12x^2 + 2x + 11 = 12 \left( x^2 + \frac{1}{6}x \right) + 11    \]  2. **Complete the square inside the parentheses:**    - Take h
+
+
+  --- livebench-reasoning (58 failures, showing 2) ---
+    pair_id : ef208923-d43f-5596-9503-908848c178cd
+    label   : B>A  |  decisions: ['A>B', 'B>A']  |  outcome: incorrect
+    question: Suppose I have a physical, solid, regular pentagon with vertices ABCDE, and I make two cuts through AC and BD. How many pieces are there after the cuts?  Think step by step, and then put your answer i
+    judge(1):  **My Answer:** To determine the number of pieces created after making two cuts through vertices AC and BD of a regular pentagon ABCDE, let's consider each step carefully.  1. **Initial State**:    - Start with a single, uncut pentagon, so we have **1 piece** initially.  2. **First Cut (AC)**:    - 
+
+    pair_id : 7805fdd4-aa25-504b-8de2-6df971c56500
+    label   : A>B  |  decisions: ['B>A', 'A>B']  |  outcome: incorrect
+    question: There are 4 people standing in a line numbered 1 through 4 in a left to right order. Each person has a set of attributes: Beverage, Hobby, Job. The attributes have the following possible values: - Bev
+    judge(1):  To answer the question, we need to determine the beverage of the person in the third position.   Let's break down the problem step-by-step.  1. **Skydiving and Hiking:**    - Skydiving is to the left of hiking.    - This means the person who likes skydiving is in position 1 or 2, and the person who
+
+
+  --- livecodebench (28 failures, showing 2) ---
+    pair_id : 100c98a6-0077-5ccd-bcee-5d507aba8a35
+    label   : A>B  |  decisions: ['A=B', 'A>B']  |  outcome: incorrect
+    question: Vanya and Vova are playing a game. Players are given an integer $n$. On their turn, the player can add $1$ to the current integer or subtract $1$. The players take turns; Vanya starts. If after Vanya'
+    judge(1):  **My Answer:**  To determine the winner of the game, we need to consider the possible moves of both players. If the current number is divisible by 3, Vanya wins. If not, we need to check if Vova can win in the next 10 moves. We can do this by checking if the number is congruent to 1 or 2 modulo 3. 
+
+    pair_id : 60479e16-f175-5268-8d7b-cf0effbeaeb6
+    label   : B>A  |  decisions: ['A>B', None]  |  outcome: incorrect
+    question: You are given a 0-indexed integer array nums representing the score of students in an exam. The teacher would like to form one non-empty group of students with maximal strength, where the strength of 
+    judge(1):  To solve the problem, we need to find the maximum product of a non-empty subset of the given array. We can achieve this by iterating over all possible subsets and calculating their product.  Here's my own answer to the prompt:  ```python from typing import List from itertools import combinations  c
+
+
+  --- mmlu-pro (95 failures, showing 2) ---
+    pair_id : e302b0a0-28d5-5a3c-b1af-fedcf5543e72
+    label   : A>B  |  decisions: ['A>B', 'A>B']  |  outcome: inconsistent
+    question: A college student initiated a criminal case against his former roommate, claiming the former roommate snuck in and removed his state-of-the-art home theater equipment from his house. The college stude
+    judge(1):  To determine if evidence of the student's reputation for dishonesty is admissible in a claim of malicious prosecution, we need to consider several legal principles, especially those concerning character evidence and its relevance.  1. **Relevance to Malicious Prosecution**:    - Malicious prosecuti
+
+    pair_id : 2d989dfb-7cf0-549e-945c-3dd060d1fad5
+    label   : A>B  |  decisions: ['B>A', 'A>B']  |  outcome: incorrect
+    question: A ceramics studio contracted with an artist to produce cups and saucers designed by the artist. The artist was an established designer of collectible ceramic dinnerware, and the studio did production 
+    judge(1):  My answer to the prompt is:  The studio's evidence of industry practice is admissible because it may explain the ambiguity in the contract. The contract contains a merger clause, but if the term "each" is ambiguous, extrinsic evidence to clarify that ambiguity can be permissible. Under the Uniform 
+
+
+[[ Skywork_Skywork-Reward-Llama-3.1-8B ]]
+
+  --- livebench-math (13 failures, showing 2) ---
+    pair_id : 5c614de5-0a80-5981-bb36-2690b198168c
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: Differentiate the following function: $\log (-8 x-4)$. Please put your final answer in a $\\boxed{}$.
+    judge(1): 
+
+    pair_id : 5bea4109-3545-525a-813e-4b7f2a95a91b
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: Cyrus the frog jumps $2$ units in a direction, then $2$ more in another direction. What is the probability that he lands less than $1$ unit away from his starting position? $\textbf{(A)}~\frac{1}{6}\q
+    judge(1): 
+
+
+  --- livebench-reasoning (36 failures, showing 2) ---
+    pair_id : 7805fdd4-aa25-504b-8de2-6df971c56500
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: There are 4 people standing in a line numbered 1 through 4 in a left to right order. Each person has a set of attributes: Beverage, Hobby, Job. The attributes have the following possible values: - Bev
+    judge(1): 
+
+    pair_id : d7d8f0bd-8352-56c0-8eb4-34d212a2ad52
+    label   : B>A  |  decisions: ['A>B']  |  outcome: incorrect
+    question: In this question, assume each person either always tells the truth or always lies. The person at the school tells the truth. Maya is at the city hall. The person at the beach says the person at the ba
+    judge(1): 
+
+
+  --- livecodebench (21 failures, showing 2) ---
+    pair_id : 100c98a6-0077-5ccd-bcee-5d507aba8a35
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: Vanya and Vova are playing a game. Players are given an integer $n$. On their turn, the player can add $1$ to the current integer or subtract $1$. The players take turns; Vanya starts. If after Vanya'
+    judge(1): 
+
+    pair_id : e4b55dd8-fbc7-5b24-94e6-fed411aa78e7
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: A 0-indexed array derived with length n is derived by computing the bitwise XOR (⊕) of adjacent values in a binary array original of length n. Specifically, for each index i in the range [0, n - 1]:  
+    judge(1): 
+
+
+  --- mmlu-pro (63 failures, showing 2) ---
+    pair_id : e302b0a0-28d5-5a3c-b1af-fedcf5543e72
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: A college student initiated a criminal case against his former roommate, claiming the former roommate snuck in and removed his state-of-the-art home theater equipment from his house. The college stude
+    judge(1): 
+
+    pair_id : 2d989dfb-7cf0-549e-945c-3dd060d1fad5
+    label   : A>B  |  decisions: ['B>A']  |  outcome: incorrect
+    question: A ceramics studio contracted with an artist to produce cups and saucers designed by the artist. The artist was an established designer of collectible ceramic dinnerware, and the studio did production 
+    judge(1): 
+
+
 [[ Skywork_Skywork-Critic-Llama-3.1-8B ]]
 
   --- livebench-math (14 failures, showing 2) ---
@@ -328,3 +472,112 @@ JudgeBench Output Analysis
     label   : A>B  |  decisions: ['B>A', 'A>B']  |  outcome: incorrect
     question: A ceramics studio contracted with an artist to produce cups and saucers designed by the artist. The artist was an established designer of collectible ceramic dinnerware, and the studio did production 
     judge(1): [[B]]
+
+
+============================================================
+  Skywork Reward vs Critic — Direct Comparison
+============================================================
+  Reward : Skywork_Skywork-Reward-Llama-3.1-8B
+  Critic : Skywork_Skywork-Critic-Llama-3.1-8B
+
+  Category                   Reward   Critic   Delta
+  --------------------------------------------------
+  mmlu-pro                    59.1%    52.6%  -6.5
+  livebench-reasoning         63.3%    54.1%  -9.2
+  livebench-math              76.8%    75.0%  -1.8
+  livecodebench               50.0%    31.0% -19.0
+  Overall                     62.0%    54.0%  -8.0
+
+  --- Pairwise agreement  (N=350 shared pairs) ---
+  Both correct               166  ( 47.4%)
+  Both incorrect             110  ( 31.4%)
+  Reward correct only         51  ( 14.6%)
+  Critic correct only         23  (  6.6%)
+  Other (incons/tie)           0  (  0.0%)
+  Agreement rate             276  ( 78.9%)
+
+  --- Reward model score margin analysis ---
+  (margin = |score_A - score_B|; higher = more confident)
+  Correct   pairs — mean margin: 10.00 (n=217)
+  Incorrect pairs — mean margin: 6.13 (n=133)
+  Incons.   pairs — mean margin: n/a
+
+  Category                       Correct margin     Incorrect margin
+  ------------------------------------------------------------------
+  mmlu-pro                          9.84 (n=91)          6.22 (n=63)
+  livebench-reasoning               9.40 (n=62)          5.70 (n=36)
+  livebench-math                   12.35 (n=43)          4.82 (n=13)
+  livecodebench                     7.59 (n=21)          7.38 (n=21)
+  Overall                                   n/a                  n/a
+
+============================================================
+  Prompted judges — in-depth comparison
+============================================================
+  Models: gemini-2.5-fl | gpt-4.1-mini | gpt-4o-mini | llama-3.1-8B
+
+  --- Inconsistency rates by category ---
+  (2-pass reverse-order scoring: inconsistency = flipped verdict on swap)
+  Category                  gemini-2.5-fl   gpt-4.1-mini    gpt-4o-mini   llama-3.1-8B
+  ------------------------------------------------------------------------------------
+  mmlu-pro                          21.4%          16.2%          24.7%          38.3%
+  livebench-reasoning               24.5%          20.4%          25.5%          31.6%
+  livebench-math                    10.7%          10.7%          26.8%          37.5%
+  livecodebench                     26.2%          26.2%          23.8%          26.2%
+  Overall                           21.1%          17.7%          25.1%          34.9%
+
+  --- Pairwise agreement matrix ---
+  (% of pairs where both models give the same final verdict)
+                            gemini-2.5-fl   gpt-4.1-mini    gpt-4o-mini   llama-3.1-8B
+  ------------------------------------------------------------------------------------
+  gemini-2.5-fl                    100.0%          58.0%          43.4%          37.1%
+  gpt-4.1-mini                      58.0%         100.0%          49.7%          38.3%
+  gpt-4o-mini                       43.4%          49.7%         100.0%          46.0%
+  llama-3.1-8B                      37.1%          38.3%          46.0%         100.0%
+
+  --- Consensus across all 4 prompted models  (N=350 pairs) ---
+  All correct (unanimous)               69  ( 19.7%)
+  Majority correct (3/4+)               93  ( 26.6%)
+  Even split (2/4)                      90  ( 25.7%)
+  Majority wrong (only 1/4 right)       62  ( 17.7%)
+  All wrong (unanimous)                 36  ( 10.3%)
+
+  --- Per-category ranking (best -> worst accuracy) ---
+  mmlu-pro                  gemini-2.5-fl 65.6%  gpt-4.1-mini 65.6%  gpt-4o-mini 47.4%  llama-3.1-8B 38.3%
+  livebench-reasoning       gpt-4.1-mini 72.4%  gemini-2.5-fl 67.3%  gpt-4o-mini 43.9%  llama-3.1-8B 40.8%
+  livebench-math            gemini-2.5-fl 82.1%  gpt-4.1-mini 80.4%  gpt-4o-mini 66.1%  llama-3.1-8B 44.6%
+  livecodebench             gpt-4.1-mini 71.4%  gemini-2.5-fl 69.0%  gpt-4o-mini 40.5%  llama-3.1-8B 33.3%
+  Overall                   gpt-4.1-mini 70.6%  gemini-2.5-fl 69.1%  gpt-4o-mini 48.6%  llama-3.1-8B 39.4%
+
+============================================================
+  Judge paradigm comparison
+============================================================
+  Paradigm groupings:
+    Prompted            : gemini-2.5-fl, gpt-4.1-mini, gpt-4o-mini, llama-3.1-8B
+    Fine-tuned (Critic) : Skywork-Critic
+    Reward Model        : Skywork-Reward
+
+  --- Average accuracy by paradigm ---
+  Category                           Prompted  Fine-tuned (Criti       Reward Model
+  ---------------------------------------------------------------------------------
+  mmlu-pro                              54.2%              52.6%              59.1%
+  livebench-reasoning                   56.1%              54.1%              63.3%
+  livebench-math                        68.3%              75.0%              76.8%
+  livecodebench                         53.6%              31.0%              50.0%
+  Overall                               56.9%              54.0%              62.0%
+
+  --- Average inconsistency rate by paradigm ---
+  (Reward Model uses single-pass scoring — inconsistency is 0% by design)
+  Category                           Prompted  Fine-tuned (Criti       Reward Model
+  ---------------------------------------------------------------------------------
+  mmlu-pro                              25.2%              21.4%               0.0%
+  livebench-reasoning                   25.5%              13.3%               0.0%
+  livebench-math                        21.4%               8.9%               0.0%
+  livecodebench                         25.6%              28.6%               0.0%
+  Overall                               24.7%              18.0%               0.0%
+
+  --- Best-performing paradigm per category ---
+  mmlu-pro                  -> Reward Model           (59.1% avg)
+  livebench-reasoning       -> Reward Model           (63.3% avg)
+  livebench-math            -> Reward Model           (76.8% avg)
+  livecodebench             -> Prompted               (53.6% avg)
+  Overall                   -> Reward Model           (62.0% avg)

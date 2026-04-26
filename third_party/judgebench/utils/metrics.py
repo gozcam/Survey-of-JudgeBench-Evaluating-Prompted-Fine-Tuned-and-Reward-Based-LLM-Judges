@@ -23,7 +23,7 @@ def compute_final_metrics(pairs: List[Dict[str, Any]], reverse_order: bool, incl
             for pair in pairs
         )
         n_incorrect = n_pairs - n_correct
-        return 100*n_correct/n_pairs
+        return 0.0 if n_pairs == 0 else 100*n_correct/n_pairs
         
     else:
         
